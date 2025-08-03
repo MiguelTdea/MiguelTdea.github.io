@@ -71,13 +71,34 @@
   </div>
 
   <script>
-    function showSection(sectionId) {
-      const sections = ['home', 'privacy', 'terms'];
-      sections.forEach(id => {
-        document.getElementById(id).classList.add('hidden');
-      });
-      document.getElementById(sectionId).classList.remove('hidden');
+  function showSection(sectionId) {
+    const sections = ['home', 'privacy', 'terms'];
+    sections.forEach(id => {
+      document.getElementById(id).classList.add('hidden');
+    });
+    document.getElementById(sectionId).classList.remove('hidden');
+  }
+
+  // Leer el hash al cargar la página
+  window.addEventListener('load', () => {
+    const hash = location.hash.replace('#', '');
+    if (['privacy', 'terms'].includes(hash)) {
+      showSection(hash);
+    } else {
+      showSection('home');
     }
-  </script>
+  });
+
+  // Manejar cambios en el hash
+  window.addEventListener('hashchange', () => {
+    const hash = location.hash.replace('#', '');
+    if (['privacy', 'terms'].includes(hash)) {
+      showSection(hash);
+    } else {
+      showSection('home');
+    }
+  });
+</script>
+
 </body>
 </html>
