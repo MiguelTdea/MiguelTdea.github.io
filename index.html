@@ -1,81 +1,83 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Susurros - Inicio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Susurros - Información Legal</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 2rem;
-      line-height: 1.6;
-      background-color: #f7f7f7;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
     }
-    h1 {
-      color: #5b2b82;
+    header {
+      background-color: #5c4d7d;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #eee;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: #5c4d7d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>Bienvenido a Susurros</h1>
-  <p>Susurros es una aplicación emocional pensada para personas solitarias o introspectivas. Nuestro objetivo es brindar compañía a través de lecturas, reflexiones y relatos personales.</p>
-  <p>Usamos tu cuenta de Google únicamente para autenticarte. No recopilamos información adicional ni compartimos datos con terceros.</p>
-</body>
-</html>
+  <header>
+    <h1>Susurros - Información Legal</h1>
+  </header>
 
-<!-- privacy-policy.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidad - Susurros</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      line-height: 1.6;
-      background-color: #f7f7f7;
-      color: #333;
-    }
-    h1 {
-      color: #5b2b82;
-    }
-  </style>
-</head>
-<body>
-  <h1>Política de Privacidad</h1>
-  <p>Susurros utiliza tu cuenta de Google exclusivamente con fines de autenticación. No accedemos, recopilamos ni almacenamos información personal adicional.</p>
-  <p>Tu información no será compartida con terceros ni utilizada con fines comerciales.</p>
-  <p>Si tienes preguntas, contáctanos a: killatonez39@gmail.com</p>
-</body>
-</html>
+  <nav>
+    <a href="#" onclick="showSection('home')">Inicio</a>
+    <a href="#" onclick="showSection('privacy')">Política de Privacidad</a>
+    <a href="#" onclick="showSection('terms')">Términos del Servicio</a>
+  </nav>
 
-<!-- terms.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Términos de Servicio - Susurros</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      line-height: 1.6;
-      background-color: #f7f7f7;
-      color: #333;
+  <div class="content">
+    <section id="home">
+      <h2>Bienvenido a Susurros</h2>
+      <p>Esta es la página oficial de información para la aplicación <strong>Susurros</strong>, disponible en Google Play Store. Aquí encontrarás nuestra Política de Privacidad y nuestros Términos del Servicio.</p>
+    </section>
+
+    <section id="privacy" class="hidden">
+      <h2>Política de Privacidad</h2>
+      <p>Susurros respeta tu privacidad. No recopilamos información personal sensible sin tu consentimiento explícito. Toda información proporcionada por el usuario se utiliza exclusivamente para mejorar la experiencia dentro de la aplicación.</p>
+    </section>
+
+    <section id="terms" class="hidden">
+      <h2>Términos del Servicio</h2>
+      <p>Al utilizar la aplicación Susurros, aceptas nuestros términos. La app está diseñada para brindar contenido reflexivo, de entretenimiento y emocional. No debe utilizarse como sustituto de asesoramiento profesional.</p>
+    </section>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = ['home', 'privacy', 'terms'];
+      sections.forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+      document.getElementById(sectionId).classList.remove('hidden');
     }
-    h1 {
-      color: #5b2b82;
-    }
-  </style>
-</head>
-<body>
-  <h1>Términos de Servicio</h1>
-  <p>Al usar Susurros, aceptas que el acceso se proporciona tal como está, sin garantías. Nos reservamos el derecho de modificar o discontinuar la aplicación en cualquier momento.</p>
-  <p>El uso indebido o la violación de estas condiciones puede dar lugar a la suspensión del acceso.</p>
+  </script>
 </body>
 </html>
