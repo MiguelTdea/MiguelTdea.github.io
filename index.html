@@ -57,69 +57,68 @@
   <div class="content">
     <section id="home">
       <h2>Bienvenido a Susurros</h2>
-      <p>Susurros es una aplicación móvil pensada para acompañarte emocionalmente a través de lecturas breves, reflexivas y profundamente humanas. Creada para personas introspectivas, solitarias o simplemente en busca de una pausa emocional, Susurros ofrece relatos que invitan a la conexión interior, al descanso mental y a sentirte acompañado, aun en tus momentos de mayor silencio.
+      <p><strong>Susurros</strong> es una aplicación móvil disponible en Google Play Store, creada para acompañarte emocionalmente a través de lecturas breves, reflexivas y profundamente humanas. Está diseñada para personas introspectivas, solitarias o simplemente en busca de una pausa emocional.
 
-El contenido de la app incluye confesiones anónimas, anécdotas personales, pensamientos emocionales, reflexiones y pequeños relatos íntimos que despiertan empatía y humanidad. Todo ha sido cuidadosamente diseñado para generar cercanía y bienestar desde el lenguaje y la narrativa.
+El contenido incluye confesiones anónimas, anécdotas personales, pensamientos emocionales, reflexiones y relatos íntimos. Todo ha sido cuidadosamente elaborado para generar cercanía y bienestar desde el lenguaje y la narrativa.
 
-Susurros no es una red social, ni busca likes ni seguidores. Es un espacio tranquilo, íntimo, emocionalmente seguro y sin ruido.
-        Esta es la página oficial de información para la aplicación <strong>Susurros</strong>, disponible en Google Play Store. Aquí encontrarás nuestra Política de Privacidad y nuestros Términos del Servicio.
-      Para consultas, soporte técnico o sugerencias, puedes escribirnos directamente a:
-      susurros.helpone@yahoo.com
-</p>
+<strong>Susurros</strong> no es una red social. No busca seguidores ni likes. Es un espacio tranquilo, íntimo y emocionalmente seguro, libre de ruido digital.
+
+Esta página es el sitio web oficial de la aplicación <strong>Susurros</strong>, donde encontrarás nuestra Política de Privacidad y nuestros Términos del Servicio.
+
+Para consultas, soporte técnico o sugerencias, puedes escribirnos a:  
+<strong>susurros.helpone@yahoo.com</strong></p>
     </section>
 
     <section id="privacy" class="hidden">
-      <h2>Política de Privacidad</h2>
-      <p>En Susurros, nos tomamos muy en serio la privacidad de nuestros usuarios.
+      <h2>Política de Privacidad de la aplicación Susurros</h2>
+      <p>En <strong>Susurros</strong>, nos tomamos muy en serio la privacidad de nuestros usuarios.
 
-Solo recopilamos información estrictamente necesaria para el funcionamiento de la aplicación, como el nombre, la dirección de correo electrónico y preferencias de lectura si el usuario decide iniciar sesión mediante su cuenta de Google.
+Solo recopilamos la información estrictamente necesaria para el funcionamiento de la aplicación, como nombre, dirección de correo electrónico y preferencias de lectura, si el usuario inicia sesión mediante su cuenta de Google.
 
-Esta información se utiliza exclusivamente para personalizar la experiencia del usuario, mejorar el contenido ofrecido y garantizar el buen funcionamiento de la plataforma.
+Estos datos se utilizan exclusivamente para personalizar la experiencia del usuario, mejorar el contenido ofrecido y garantizar el funcionamiento adecuado de la app.
 
-No compartimos datos personales con terceros sin el consentimiento expreso del usuario, salvo cuando lo exija la ley. Toda la información recopilada es almacenada de forma segura, cumpliendo con las normativas vigentes de protección de datos.</p>
+<strong>Susurros</strong> no comparte datos personales con terceros sin el consentimiento del usuario, salvo obligación legal. Toda la información se almacena de forma segura y se maneja conforme a las normativas vigentes de protección de datos, incluido el Reglamento General de Protección de Datos (RGPD) y las políticas de Google.</p>
     </section>
 
     <section id="terms" class="hidden">
-      <h2>Términos del Servicio</h2>
-      <p>El uso de la aplicación Susurros implica la aceptación de los siguientes términos y condiciones.
+      <h2>Términos del Servicio de la aplicación Susurros</h2>
+      <p>El uso de la aplicación móvil <strong>Susurros</strong> implica la aceptación de los siguientes términos y condiciones:
 
-Esta plataforma está destinada exclusivamente a fines personales y no comerciales. El contenido proporcionado tiene como objetivo brindar acompañamiento emocional, entretenimiento reflexivo y lectura ligera, y no debe considerarse como sustituto de asesoramiento profesional en ninguna materia (psicológica, médica, legal, etc.).
+Esta plataforma está destinada exclusivamente a fines personales y no comerciales. El contenido ofrecido tiene como propósito brindar acompañamiento emocional, reflexión y entretenimiento mediante lecturas breves. No debe considerarse un sustituto de asesoramiento profesional médico, psicológico, legal o de cualquier otra índole.
 
-Los desarrolladores se reservan el derecho de modificar, actualizar o eliminar contenido sin previo aviso, así como de ajustar estos términos conforme evolucione el servicio.
+Los desarrolladores de <strong>Susurros</strong> se reservan el derecho de modificar, actualizar o eliminar contenido sin previo aviso, así como de actualizar estos términos conforme evolucione el servicio.
 
-Recomendamos a los usuarios revisar periódicamente estos términos para mantenerse informados de cualquier cambio. Al continuar utilizando la aplicación, el usuario declara estar de acuerdo con estas condiciones.</p>
+Recomendamos a los usuarios revisar esta sección periódicamente para estar al tanto de cualquier cambio. Al continuar utilizando la app, el usuario acepta las condiciones aquí descritas.</p>
     </section>
   </div>
 
   <script>
-  function showSection(sectionId) {
-    const sections = ['home', 'privacy', 'terms'];
-    sections.forEach(id => {
-      document.getElementById(id).classList.add('hidden');
+    function showSection(sectionId) {
+      const sections = ['home', 'privacy', 'terms'];
+      sections.forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    window.addEventListener('load', () => {
+      const hash = location.hash.replace('#', '');
+      if (['privacy', 'terms'].includes(hash)) {
+        showSection(hash);
+      } else {
+        showSection('home');
+      }
     });
-    document.getElementById(sectionId).classList.remove('hidden');
-  }
 
-  // Leer el hash al cargar la página
-  window.addEventListener('load', () => {
-    const hash = location.hash.replace('#', '');
-    if (['privacy', 'terms'].includes(hash)) {
-      showSection(hash);
-    } else {
-      showSection('home');
-    }
-  });
-
-  // Manejar cambios en el hash
-  window.addEventListener('hashchange', () => {
-    const hash = location.hash.replace('#', '');
-    if (['privacy', 'terms'].includes(hash)) {
-      showSection(hash);
-    } else {
-      showSection('home');
-    }
-  });
-</script>
+    window.addEventListener('hashchange', () => {
+      const hash = location.hash.replace('#', '');
+      if (['privacy', 'terms'].includes(hash)) {
+        showSection(hash);
+      } else {
+        showSection('home');
+      }
+    });
+  </script>
 
 </body>
 </html>
